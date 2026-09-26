@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Camo Motors Kumasi | Premium Auto Dealership</title>
+    <!-- Google Fonts & FontAwesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div class="top-info">
+                <span><i class="fa-solid fa-location-dot"></i> Ahodwo Roundabout, Kumasi</span>
+                <span><i class="fa-solid fa-phone"></i> +233 24 000 0000</span>
+            </div>
+            <div class="top-social">
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" id="admin-trigger-btn"><i class="fa-solid fa-lock"></i> Admin Login</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <header class="header">
+        <div class="container nav-flex">
+            <a href="index.html" class="logo">
+                <i class="fa-solid fa-car-rear"></i> CAMO <span>MOTORS</span>
+            </a>
+            <nav class="navbar" id="navbar">
+                <a href="#home" class="active">Home</a>
+                <a href="#inventory">Showroom</a>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#contact">Contact</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="https://wa.me/233240000000?text=Hello%20Camo%20Motors,%20I%20want%20to%20inquire%20about%20a%20car." target="_blank" class="btn btn-primary">
+                    <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                </a>
+            </div>
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="home">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content">
+            <span class="hero-badge"><i class="fa-solid fa-fire"></i> Kumasi's Trusted Auto Dealership</span>
+            <h1>Drive Your Dream Car Today in Kumasi</h1>
+            <p>Explore top-grade foreign used and brand new SUVs, sedans, and pickups imported directly with verified customs documentation. Ready for immediate inspection at Ahodwo.</p>
+            <div class="hero-btns">
+                <a href="#inventory" class="btn btn-primary btn-lg">Browse Showroom</a>
+                <a href="#contact" class="btn btn-outline btn-lg">Visit Lot</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- INVENTORY & FILTER SECTION -->
+    <section class="inventory-section" id="inventory">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Available Showroom Inventory</h2>
+                <p>Filter through our selection of registered and unregistered vehicles available right here in Kumasi.</p>
+            </div>
+
+            <!-- FILTERS -->
+            <div class="filter-bar">
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" id="search-input" placeholder="Search make, model...">
+                </div>
+                <div class="filter-dropdowns">
+                    <select id="filter-condition">
+                        <option value="">All Conditions</option>
+                        <option value="Foreign Used">Foreign Used</option>
+                        <option value="Brand New">Brand New</option>
+                        <option value="Locally Used">Locally Used</option>
+                    </select>
+                    <select id="filter-body">
+                        <option value="">All Body Types</option>
+                        <option value="SUV">SUV</option>
+                        <option value="Sedan">Sedan</option>
+                        <option value="Pickup">Pickup</option>
+                    </select>
+                    <button id="reset-filters" class="btn btn-outline" style="border-color: var(--dark); color: var(--dark);">Reset</button>
+                </div>
+            </div>
+
+            <!-- CAR GRID -->
+            <div class="car-grid" id="car-grid">
+                <!-- Cars will be dynamically injected by script.js -->
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose Camo Motors?</h2>
+                <p>We offer seamless car acquisition tailored for drivers in Ashanti Region and beyond.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-file-shield"></i></div>
+                    <h3>Genuine Customs Papers</h3>
+                    <p>Every vehicle comes with complete, verified Ghana Revenue Authority (GRA) customs clearance documents.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-handshake-angle"></i></div>
+                    <h3>Flexible Payment Plans</h3>
+                    <p>Partnering with top financial institutions to give you easy installment options with manageable initial deposits.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fa-solid fa-car-burst"></i></div>
+                    <h3>Trade-In Services</h3>
+                    <p>Upgrade your current ride! Bring your car to our Ahodwo showroom for a fair valuation and swap.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <div class="container about-grid">
+            <div class="about-text">
+                <h2>Kumasi's Premier Auto Trading Destination</h2>
+                <p>Located strategically at Ahodwo Roundabout, <strong>Camo Motors</strong> is built on absolute trust, transparent vehicle history, and competitive pricing in Ghanaian Cedis.</p>
+                <ul class="about-list">
+                    <li><i class="fa-solid fa-circle-check"></i> Test drives available right on site</li>
+                    <li><i class="fa-solid fa-circle-check"></i> Direct port clearing assistance (Tema / Takoradi)</li>
+                </ul>
+            </div>
+            <div class="about-card-box">
+                <div class="highlight-box">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <h3>Visit Our Showroom</h3>
+                    <p>Ahodwo Roundabout, near main fuel station, Kumasi</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Get In Touch With Us</h2>
+                <p>Have questions or want to book an inspection? Reach out now.</p>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-box">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <h4>Location</h4>
+                            <p>Ahodwo Roundabout, Kumasi, Ghana</p>
+                        </div>
+                    </div>
+                    <div class="info-box">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <h4>Phone Numbers</h4>
+                            <p>+233 24 000 0000</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form-box">
+                    <form id="inquiry-form">
+                        <h3>Send Us a Quick Message</h3>
+                        <div class="form-group">
+                            <input type="text" id="sender-name" placeholder="Your Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" id="sender-phone" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" id="sender-car" placeholder="Car Model of Interest" required>
+                        </div>
+                        <div class="form-group">
+                            <textarea id="sender-msg" rows="4" placeholder="Your message..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Submit Inquiry</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container footer-flex">
+            <p>&copy; 2026 Camo Motors Kumasi. All Rights Reserved.</p>
+            <div class="footer-links">
+                <a href="#home">Privacy Policy</a>
+                <a href="#inventory">Showroom</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CAR DETAILS MODAL -->
+    <div class="modal" id="car-modal">
+        <div class="modal-content">
+            <span class="close-modal" id="close-modal">&times;</span>
+            <div id="modal-body-content"></div>
+        </div>
+    </div>
+
+    <!-- ADMIN LOGIN MODAL -->
+    <div class="modal" id="admin-login-modal">
+        <div class="modal-content" style="max-width: 400px;">
+            <span class="close-modal" id="close-admin-login">&times;</span>
+            <h2>Admin Login</h2>
+            <form id="admin-login-form" style="margin-top: 20px;">
+                <div class="form-group">
+                    <label>Username (MANU)</label>
+                    <input type="text" id="admin-user" required placeholder="Enter username">
+                </div>
+                <div class="form-group">
+                    <label>Passcode (WORD)</label>
+                    <input type="password" id="admin-pass" required placeholder="Enter passcode">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- ADMIN DASHBOARD MODAL -->
+    <div class="modal" id="admin-dashboard-modal">
+        <div class="modal-content" style="max-width: 900px;">
+            <span class="close-modal" id="close-admin-dashboard">&times;</span>
+            <div class="admin-dash-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                <h2>Admin Dashboard - Manage Inventory</h2>
+                <button id="logout-btn" class="btn btn-outline" style="background: var(--primary); color: white; border: none;">Logout</button>
+            </div>
+            
+            <button id="open-add-car-btn" class="btn btn-primary" style="margin-bottom: 20px;"><i class="fa-solid fa-plus"></i> Add New Arrival Car</button>
+            
+            <div class="admin-car-list" style="max-height: 400px; overflow-y: auto;">
+                <table style="width: 100%; border-collapse: collapse;" id="admin-cars-table">
+                    <thead>
+                        <tr style="background: var(--light); text-align: left;">
+                            <th style="padding: 10px;">Image</th>
+                            <th style="padding: 10px;">Car Details</th>
+                            <th style="padding: 10px;">Price (GH₵)</th>
+                            <th style="padding: 10px;">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="admin-table-body">
+                        <!-- Dynamically filled -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- ADD/EDIT CAR MODAL -->
+    <div class="modal" id="car-form-modal">
+        <div class="modal-content" style="max-width: 600px;">
+            <span class="close-modal" id="close-car-form">&times;</span>
+            <h2 id="car-form-title">Add New Car</h2>
+            <form id="car-manage-form" style="margin-top: 15px;">
+                <input type="hidden" id="car-edit-id">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Make</label>
+                        <input type="text" id="car-make" required placeholder="e.g. Toyota">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <input type="text" id="car-model" required placeholder="e.g. Land Cruiser">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Year</label>
+                        <input type="number" id="car-year" required placeholder="2024">
+                    </div>
+                    <div class="form-group">
+                        <label>Price (GH₵)</label>
+                        <input type="number" id="car-price" required placeholder="500000">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Condition</label>
+                        <select id="car-condition">
+                            <option value="Foreign Used">Foreign Used</option>
+                            <option value="Brand New">Brand New</option>
+                            <option value="Locally Used">Locally Used</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Body Type</label>
+                        <select id="car-body">
+                            <option value="SUV">SUV</option>
+                            <option value="Sedan">Sedan</option>
+                            <option value="Pickup">Pickup</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Transmission</label>
+                        <input type="text" id="car-transmission" value="Automatic">
+                    </div>
+                </div>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                    <div class="form-group">
+                        <label>Fuel</label>
+                        <input type="text" id="car-fuel" value="Petrol">
+                    </div>
+                    <div class="form-group">
+                        <label>Mileage</label>
+                        <input type="text" id="car-mileage" value="0 km">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Upload Image via Cloudinary</label>
+                    <input type="file" id="car-image-file" accept="image/*">
+                    <input type="hidden" id="car-image-url">
+                    <div id="upload-status" style="font-size: 0.85rem; color: var(--gray); margin-top: 5px;"></div>
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea id="car-desc" rows="3" required placeholder="Vehicle details..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Save Car</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Custom JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
