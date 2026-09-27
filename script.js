@@ -1,9 +1,9 @@
 // --- CONFIGURATION FOR JSONBIN & CLOUDINARY ---
-const JSONBIN_BIN_ID = "YOUR_BIN_ID_HERE"; // Replace with your JSONBin Bin ID
-const JSONBIN_API_KEY = "YOUR_MASTER_KEY_HERE"; // Replace with your JSONBin Master/Access Key (Optional if bin is public)
+const JSONBIN_BIN_ID = "6ab85de2ac6210605af9449d"; // Replace with your JSONBin Bin ID
+const JSONBIN_API_KEY = "$2a$10$naPldLFtbAB1mQmuzuFfHevWBpB22kc8qHLUo1HXwYOJsk3C2ny6."; // Replace with your JSONBin Master/Access Key (Optional if bin is public)
 
-const CLOUDINARY_CLOUD_NAME = "YOUR_CLOUDINARY_CLOUD_NAME"; // Replace with your Cloudinary Cloud Name
-const CLOUDINARY_UPLOAD_PRESET = "YOUR_UPLOAD_PRESET"; // Replace with your Cloudinary Unsigned Upload Preset
+const CLOUDINARY_CLOUD_NAME = "qfx75zm9"; // Replace with your Cloudinary Cloud Name
+const CLOUDINARY_UPLOAD_PRESET = "car dealership"; // Replace with your Cloudinary Unsigned Upload Preset
 
 // Fallback initial dataset if JSONBin ID is not configured yet
 let cars = [
