@@ -55,6 +55,8 @@ const adminTriggerBtn = document.getElementById('admin-trigger-btn');
 const adminLoginModal = document.getElementById('admin-login-modal');
 const closeAdminLogin = document.getElementById('close-admin-login');
 const adminLoginForm = document.getElementById('admin-login-form');
+const loginThemeToggle = document.getElementById('login-theme-toggle');
+const loginThemeState = document.getElementById('login-theme-state');
 
 const adminDashboardModal = document.getElementById('admin-dashboard-modal');
 const closeAdminDashboard = document.getElementById('close-admin-dashboard');
@@ -68,6 +70,28 @@ const carManageForm = document.getElementById('car-manage-form');
 const carFormTitle = document.getElementById('car-form-title');
 const carImageFile = document.getElementById('car-image-file');
 const uploadStatus = document.getElementById('upload-status');
+
+function closeMobileMenu() {
+    navbar.classList.remove('is-open');
+    mobileMenu.setAttribute('aria-expanded', 'false');
+    mobileMenu.setAttribute('aria-label', 'Open navigation');
+    mobileMenu.innerHTML = '<i class="fa-solid fa-bars"></i>';
+}
+
+mobileMenu.addEventListener('click', () => {
+    const isOpen = navbar.classList.toggle('is-open');
+    mobileMenu.setAttribute('aria-expanded', String(isOpen));
+    mobileMenu.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    mobileMenu.innerHTML = `<i class="fa-solid fa-${isOpen ? 'xmark' : 'bars'}"></i>`;
+});
+
+navbar.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMobileMenu);
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMobileMenu();
+});
 
 // --- FETCH & SYNC WITH JSONBIN ---
 async function fetchCarsFromBin() {
@@ -199,10 +223,47 @@ adminTriggerBtn.addEventListener('click', () => {
     if (sessionStorage.getItem('isAdminLoggedIn') === 'true') {
         openAdminDashboard();
     } else {
-        adminLoginModal.style.display = 'flex';
+        openAdminLogin();
     }
 });
 closeAdminLogin.addEventListener('click', () => adminLoginModal.style.display = 'none');
+
+function setLoginTheme(theme) {
+    const isLight = theme === 'light';
+    adminLoginModal.dataset.theme = theme;
+    loginThemeToggle.setAttribute('aria-checked', String(isLight));
+    loginThemeToggle.setAttribute('aria-label', `Switch to ${isLight ? 'dark' : 'light'} mode`);
+    loginThemeState.textContent = `${theme.toUpperCase()} MODE`;
+    localStorage.setItem('adminLoginTheme', theme);
+}
+
+function openAdminLogin() {
+    const savedTheme = localStorage.getItem('adminLoginTheme') || 'light';
+    setLoginTheme(savedTheme);
+    adminLoginModal.style.display = 'flex';
+    adminLoginModal.classList.remove('is-arrived', 'is-switching');
+    void adminLoginModal.offsetWidth;
+    adminLoginModal.classList.add('is-arriving');
+
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches || !window.jQuery) return;
+    const $modal = window.jQuery(adminLoginModal);
+    $modal.stop(true, true).css('opacity', 0).animate({ opacity: 1 }, 260);
+}
+
+loginThemeToggle.addEventListener('click', () => {
+    const nextTheme = adminLoginModal.dataset.theme === 'light' ? 'dark' : 'light';
+    setLoginTheme(nextTheme);
+    adminLoginModal.classList.remove('is-arrived', 'is-arriving', 'is-switching');
+    void adminLoginModal.offsetWidth;
+    adminLoginModal.classList.add('is-switching');
+});
+
+adminLoginModal.addEventListener('animationend', (event) => {
+    if (event.target.id === 'login-walker') {
+        adminLoginModal.classList.remove('is-arriving', 'is-switching');
+        adminLoginModal.classList.add('is-arrived');
+    }
+});
 
 adminLoginForm.addEventListener('submit', (e) => {
     e.preventDefault();

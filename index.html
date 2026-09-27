@@ -45,9 +45,9 @@
                     <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
                 </a>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
+            <button class="menu-toggle" id="mobile-menu" type="button" aria-label="Open navigation" aria-controls="navbar" aria-expanded="false">
                 <i class="fa-solid fa-bars"></i>
-            </div>
+            </button>
         </div>
     </header>
 
@@ -218,21 +218,55 @@
     </div>
 
     <!-- ADMIN LOGIN MODAL -->
-    <div class="modal" id="admin-login-modal">
-        <div class="modal-content" style="max-width: 400px;">
-            <span class="close-modal" id="close-admin-login">&times;</span>
-            <h2>Admin Login</h2>
-            <form id="admin-login-form" style="margin-top: 20px;">
-                <div class="form-group">
-                    <label>Username (MANU)</label>
-                    <input type="text" id="admin-user" required placeholder="Enter username">
+    <div class="modal admin-login-modal" id="admin-login-modal">
+        <div class="modal-content admin-login-panel">
+            <button class="close-modal admin-login-close" id="close-admin-login" type="button" aria-label="Close admin login">&times;</button>
+            <div class="admin-login-scene" id="admin-login-scene" aria-hidden="true">
+                <div class="scene-stars"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="lamp-cord"></div>
+                <div class="lamp-shade"></div>
+                <div class="lamp-bulb"></div>
+                <div class="lamp-beam"></div>
+                <div class="scene-shelf"><span></span><span></span><span></span></div>
+                <div class="scene-switch"><span></span></div>
+                <div class="scene-floor"></div>
+                <div class="walking-figure" id="login-walker">
+                    <span class="figure-head"></span>
+                    <span class="figure-body"></span>
+                    <span class="figure-arm"></span>
+                    <span class="figure-leg figure-leg-front"></span>
+                    <span class="figure-leg figure-leg-back"></span>
                 </div>
-                <div class="form-group">
-                    <label>Passcode (WORD)</label>
-                    <input type="password" id="admin-pass" required placeholder="Enter passcode">
+                <div class="scene-copy">
+                    <span>CAMO MOTORS / ADMIN</span>
+                    <p>A brighter view<br>of the showroom.</p>
                 </div>
-                <button type="submit" class="btn btn-primary btn-block">Login</button>
-            </form>
+            </div>
+            <div class="admin-login-content">
+                <div class="login-topline">
+                    <span class="login-kicker"><i class="fa-solid fa-shield-halved"></i> SECURE ACCESS</span>
+                    <button class="theme-switch" id="login-theme-toggle" type="button" role="switch" aria-checked="true" aria-label="Switch to dark mode">
+                        <span class="theme-icon theme-icon-moon"><i class="fa-solid fa-moon"></i></span>
+                        <span class="theme-track"><span></span></span>
+                        <span class="theme-icon theme-icon-sun"><i class="fa-solid fa-sun"></i></span>
+                    </button>
+                </div>
+                <p class="theme-state" id="login-theme-state">LIGHT MODE</p>
+                <h2>Welcome back.</h2>
+                <p class="login-intro">Sign in to manage your showroom.</p>
+                <form id="admin-login-form">
+                    <div class="form-group">
+                        <label for="admin-user">Username</label>
+                        <div class="login-input-wrap"><i class="fa-regular fa-user"></i><input type="text" id="admin-user" required placeholder="Enter your username" autocomplete="username"></div>
+                    </div>
+                    <div class="form-group">
+                        <label for="admin-pass">Passcode</label>
+                        <div class="login-input-wrap"><i class="fa-solid fa-key"></i><input type="password" id="admin-pass" required placeholder="Enter your passcode" autocomplete="current-password"></div>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block admin-login-submit"><span>Enter dashboard</span><i class="fa-solid fa-arrow-right"></i></button>
+                </form>
+                <div class="login-footer"><span class="login-status-dot"></span> Protected dealership workspace</div>
+            </div>
         </div>
     </div>
 
@@ -340,6 +374,7 @@
     </div>
 
     <!-- Custom JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="script.js"></script>
 </body>
 </html>
